@@ -1,0 +1,15 @@
+---
+keys:
+  - &roci_host_age age1tv9elhesnglvlnnjmgyeznhyywhc5pecnyrae5psh50wklvw9exqm5yr2g
+  - &roci_mm_age age10ryp28wwrrqs322fh60shu6d9ytluchvg59pcv2nuvc2cyxwtvws67hzhd
+creation_rules:
+  - path_regex: clusters/.*\.sops\.ya?ml$
+    encrypted_regex: "^(data|stringData)$"
+    key_groups:
+      - age:
+        - *roci_host_age
+        - *roci_mm_age
+  - path_regex: .*\.sops.ya?ml$
+    key_groups:
+      - age:
+        - *roci_mm_age

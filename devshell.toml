@@ -1,0 +1,30 @@
+# https://numtide.github.io/devshell
+motd = "Just $(just --list)"
+
+[[env]]
+name = "KUBECONFIG"
+eval = "$HOME/.kube/config"
+
+[[commands]]
+package = "pkgs.kubeconform"
+
+[[commands]]
+package = "pkgs.k9s"
+
+[[commands]]
+package = "pkgs.kubecm"
+
+[[commands]]
+package = "pkgs.just"
+
+[[commands]]
+package = "unstable.fluxcd"
+
+#[[commands]]
+#package = "pkgs.kubernetes-helm"
+#[devshell]
+#packages = [
+#    "pkgs.kubernetes-helmPlugins.helm-diff",
+#    "pkgs.kubernetes-helmPlugins.helm-git",
+#    "pkgs.kubernetes-helmPlugins.helm-unittest",
+#]

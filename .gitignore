@@ -1,0 +1,7 @@
+.direnv/
+# Sops
+*.agekey
+.decrypted~*
+
+.env
+kubeconfig
