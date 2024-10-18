@@ -52,7 +52,7 @@
             treefmt.enable = true;
             pre-commit-hook-ensure-sops = {
               enable = true;
-              files = "\.sops\.";
+              files = "^\w+\.sops\.";
             };
           };
 
