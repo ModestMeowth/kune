@@ -1,0 +1,14 @@
+fail_fast: false
+repos:
+  - repo: local
+    hooks:
+      - id: treefmt
+        name: format
+        language: system
+        entry: treefmt
+        types: [text]
+      - id: ensure-sops
+        name: ensure sops
+        language: system
+        entry: pre-commit-hook-ensure-sops
+        files: '^\w+\.sops\.'
