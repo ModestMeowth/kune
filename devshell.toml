@@ -19,4 +19,13 @@ package = "pkgs.just"
 package = "unstable.fluxcd"
 
 [devshell]
-packages = ["pkgs.kubernetes-helm-wrapped", "pkgs.helmfile-wrapped"]
+packages = [
+  "pkgs.kubernetes-helm-wrapped",
+  "pkgs.helmfile-wrapped",
+  "pkgs.treefmt",
+  "pkgs.nixpkgs-fmt",
+  "pkgs.taplo",
+  "pkgs.yamlfmt",
+  "pkgs.pre-commit",
+  "pkgs.pre-commit-hook-ensure-sops",
+]
