@@ -19,11 +19,11 @@ htpasswd *ARGS:
   nix shell 'nixpkgs#apacheHttpd' --command htpasswd {{ ARGS }}
 
 bootstrap:
-  kubectl apply --server-side --kustomize ./flux/bootstrap
-  sops --decrypt ./flux/bootstrap/age-key.sops.yaml | kubectl apply -f -
-  sops --decrypt ./flux/vars/secrets.sops.yaml | kubectl apply -f -
-  kubectl apply --server-side --filename ./flux/vars/settings.yaml
-  kubectl apply --server-side --kustomize ./flux/config
+  kubectl apply --server-side --kustomize ./cluster/bootstrap
+  sops --decrypt ./cluster/bootstrap/age-key.sops.yaml | kubectl apply -f -
+  sops --decrypt ./cluster/flux/vars/secrets.sops.yaml | kubectl apply -f -
+  kubectl apply --server-side --filename ./cluster/flux/vars/settings.yaml
+  kubectl apply --server-side --kustomize ./cluster/flux/config
 
 reconcile:
   flux reconcile source git kube-cluster
