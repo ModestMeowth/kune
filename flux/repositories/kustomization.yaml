@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flux-system
+resources:
+  - flux.oci.yaml
+  - kube.git.yaml
+  - metallb.helm.yaml
+  - prometheus-community.helm.yaml
+  - rook-ceph.helm.yaml
+  - traefik.helm.yaml

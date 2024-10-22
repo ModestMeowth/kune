@@ -27,5 +27,4 @@ packages = [
   "pkgs.taplo",
   "pkgs.yamlfmt",
   "pkgs.pre-commit",
-  "pkgs.pre-commit-hook-ensure-sops",
 ]

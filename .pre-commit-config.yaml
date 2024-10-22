@@ -7,8 +7,8 @@ repos:
         language: system
         entry: treefmt
         types: [text]
-      - id: ensure-sops
-        name: ensure sops
-        language: system
-        entry: pre-commit-hook-ensure-sops
-        files: '^\w+\.sops\.'
+  - repo: https://github.com/mgaruccio/pre-commit-hook-ensure-sops
+    rev: v1.2
+    hooks:
+      - id: sops-encryption
+        files: "\\w+\\.sops\\."
