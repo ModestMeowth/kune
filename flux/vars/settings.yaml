@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: cluster-settings
   namespace: flux-system
-data: {}
+data:
+  DOMAIN: rocinante.lan

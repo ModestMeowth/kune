@@ -21,7 +21,8 @@ htpasswd *ARGS:
 bootstrap:
   kubectl apply --server-side --kustomize ./flux/bootstrap
   sops --decrypt ./flux/bootstrap/age-key.sops.yaml | kubectl apply -f -
-  sops --decrypt ./flux/config/secrets.sops.yaml | kubectl apply -f -
+  sops --decrypt ./flux/vars/secrets.sops.yaml | kubectl apply -f -
+  kubectl apply --server-side --filename ./flux/vars/settings.yaml
   kubectl apply --server-side --kustomize ./flux/config
 
 reconcile:
