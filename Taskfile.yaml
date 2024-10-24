@@ -1,0 +1,14 @@
+version: "3"
+vars:
+  K8S_PATH: "{{.ROOT_DIR}}/cluster"
+env:
+  KUBECONFIG: $HOME/.kube/config
+includes:
+  flux:
+    dir: .taskfiles/flux
+    taskfile: .taskfiles/flux
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task -l

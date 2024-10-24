@@ -27,4 +27,5 @@ packages = [
   "pkgs.taplo",
   "pkgs.yamlfmt",
   "pkgs.pre-commit",
+  "pkgs.go-task",
 ]

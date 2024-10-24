@@ -5,11 +5,11 @@ serviceAccount:
   create: true
 service:
   name: kube-dns
-  clusterIP: 10.42.0.2
+  clusterIP: 10.96.0.10
 servers:
   - zones:
       - zone: .
-        scheme: dns:///
+        scheme: dns://
         use_tcp: true
     port: 53
     plugins:
@@ -21,6 +21,8 @@ servers:
       - name: log
         configBlock: |-
           class error
+      - name: prometheus
+        parameters: 0.0.0.0:9153
       - name: kubernetes
         parameters: cluster.local in-addr.arpa ip6.arpa
         configBlock: |-
@@ -43,10 +45,10 @@ affinity:
 tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
-  - key: node-role.kubernets.io/control-plane
+  - key: node-role.kubernetes.io/control-plane
     operator: Exists
     effect: NoSchedule
-topologySpreadContstraints:
+topologySpreadConstraints:
   - maxSkew: 1
     topologyKey: kubernetes.io/hostname
     whenUnsatisfiable: DoNotSchedule
