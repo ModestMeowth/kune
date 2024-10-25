@@ -1,0 +1,19 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: tailscale-stable
+  namespace: flux-system
+spec:
+  interval: 30m
+  timeout: 3m
+  url: https://pkgs.tailscale.com/helmcharts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: tailscale-unstable
+  namespace: flux-system
+spec:
+  interval: 30m
+  timeout: 3m
+  url: https://pkgs.tailscale.com/unstable/helmcharts
