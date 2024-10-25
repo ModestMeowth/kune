@@ -18,6 +18,9 @@ package = "pkgs.just"
 [[commands]]
 package = "unstable.fluxcd"
 
+[[commands]]
+package = "unstable.cilium-cli"
+
 [devshell]
 packages = [
   "pkgs.kubernetes-helm-wrapped",
