@@ -1,6 +1,6 @@
 version: "3"
 vars:
-  K8S_PATH: "{{.ROOT_DIR}}/cluster"
+  K8S_PATH: "{{.ROOT_DIR}}/"
 env:
   KUBECONFIG: $HOME/.kube/config
 includes:
